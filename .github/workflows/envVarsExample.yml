@@ -8,7 +8,7 @@ jobs:
       JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable'
     runs-on: ubuntu-latest
     steps:
-      -name: Print Custom environment variables from ubuntu-latest
+      - name: Print Custom environment variables from ubuntu-latest
       env:
         STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable'
       run: |
