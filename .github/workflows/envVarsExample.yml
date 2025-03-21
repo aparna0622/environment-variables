@@ -1,23 +1,28 @@
 name: Environment Variables
 env: 
   WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable'
+  OVERRIDE : 'workflow Override'
 on: [push]
 jobs:
   ubuntu:
     env:
       JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable'
+      OVERRIDE : 'Job Override'
     runs-on: ubuntu-latest
     steps:
       - name: Print Custom environment variables from ubuntu-latest
         env:
           STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable'
+          OVERRIDE : 'Step Override'
         run: |
           echo "Accessing environment variable in run command"
           echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
           echo "$JOB_ENVIRONMENT_VARIABLE"
           echo "$STEP_ENVIRONMENT_VARIABLE"
+          echo "$OVERRIDE"
           echo "------------------------------------------------"
           echo "Accessing environment variables using the env context"
           echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
           echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
           echo "${{ env.STEP_ENVIRONMENT_VARIABLE }}"
+          echo "${{ env.OVERRIDE }}"
