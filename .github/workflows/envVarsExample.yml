@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Custom environment variables from ubuntu-latest
-      env:
-        STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable'
-      run: |
-        echo "Accessing environment variable in run command"
-        echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
-        echo "$JOB_ENVIRONMENT_VARIABLE"
-        echo "$STEP_ENVIRONMENT_VARIABLE"
-        echo "------------------------------------------------"
+        env:
+          STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable'
+        run: |
+          echo "Accessing environment variable in run command"
+          echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
+          echo "$JOB_ENVIRONMENT_VARIABLE"
+          echo "$STEP_ENVIRONMENT_VARIABLE"
+          echo "------------------------------------------------"
     
